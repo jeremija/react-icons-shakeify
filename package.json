@@ -1,0 +1,14 @@
+{
+  "devDependencies": {
+    "browser-unpack": "^1.4.2",
+    "browserify": "^16.2.3",
+    "common-shakeify": "^0.6.0",
+    "react": "^16.8.6",
+    "react-icons": "^3.5.0"
+  },
+  "scripts": {
+    "all": "npm run browserify && npm run report",
+    "browserify": "browserify --full-paths -p [ common-shakeify -v ] -v -o build/shaked.js src/index.js",
+    "report": "node scripts/unpack.js build/shaked.js"
+  }
+}
